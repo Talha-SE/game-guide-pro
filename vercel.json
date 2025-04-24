@@ -63,5 +63,10 @@
       "src": "/",
       "dest": "/src/pages/index.html"
     }
-  ]
+  ],
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/(.*)", "destination": "/src/$1" }
+  ],
+  "cleanUrls": true
 }
