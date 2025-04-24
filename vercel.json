@@ -2,52 +2,19 @@
   "version": 2,
   "builds": [
     {
-      "src": "src/pages/index.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "src/pages/categories.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "src/pages/guide.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "src/pages/tips.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "src/pages/about.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "src/pages/contact.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "src/guides/whiteout-survival.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "src/guides/whiteout-survival-heroes.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "src/assets/**",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "src/components/**",
+      "src": "src/**",
       "use": "@vercel/static"
     }
   ],
   "rewrites": [
     { "source": "/", "destination": "/src/pages/index.html" },
-    { "source": "/assets/(.*)", "destination": "/src/assets/$1" },
-    { "source": "/components/(.*)", "destination": "/src/components/$1" },
-    { "source": "/guides/(.*)", "destination": "/src/guides/$1.html" },
-    { "source": "/(categories|guide|tips|about|contact)", "destination": "/src/pages/$1.html" },
+    { "source": "/categories", "destination": "/src/pages/categories.html" },
+    { "source": "/guide", "destination": "/src/pages/guide.html" },
+    { "source": "/tips", "destination": "/src/pages/tips.html" },
+    { "source": "/about", "destination": "/src/pages/about.html" },
+    { "source": "/contact", "destination": "/src/pages/contact.html" },
+    { "source": "/guides/whiteout-survival", "destination": "/src/guides/whiteout-survival.html" },
+    { "source": "/guides/whiteout-survival-heroes", "destination": "/src/guides/whiteout-survival-heroes.html" },
     { "source": "/(.*)", "destination": "/src/$1" }
   ],
   "cleanUrls": true
