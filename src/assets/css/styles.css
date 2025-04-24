@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    transition: all 0.3s ease; 
+}
+
+:root.dark body {
+    background-color: #0f172a;
+    color: #e2e8f0;
+}
+
+/* Light theme specific styles */
+.light-theme-indicator {
+    display: none;
+}
+
+:root.dark .light-theme-indicator {
+    display: inline-flex;
+}
+
+.dark-theme-indicator {
+    display: inline-flex;
+}
+
+:root.dark .dark-theme-indicator {
+    display: none;
+}
+
+/* Theme gradients */
+.hero-gradient {
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+}
+
+:root.dark .hero-gradient {
+    background: linear-gradient(135deg, #1e1b4b 0%, #4f46e5 100%);
+}
+
+/* Card hover effects */
+.game-card {
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+}
+
+:root.dark .game-card {
+    border: 1px solid #1e293b;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
+}
+
+:root.dark .game-card:hover {
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.5);
+}
+
+/* Form elements */
+input, textarea, select {
+    transition: all 0.3s ease;
+}
+
+.search-box:focus {
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.5);
+}
+
+/* Navigation styles */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #7c3aed;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover:after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: #7c3aed;
+}
+
+:root.dark .nav-link:hover {
+    color: #a78bfa;
+}
+
+/* Animations */
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #e2e8f0;
+}
+
+:root.dark ::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #7c3aed;
+    border-radius: 4px;
+}
+
+:root.dark ::-webkit-scrollbar-thumb {
+    background: #4f46e5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4f46e5;
+}
+
+:root.dark ::-webkit-scrollbar-thumb:hover {
+    background: #6366f1;
+}
+
+/* Mobile menu animation */
+.mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.mobile-menu.open {
+    max-height: 500px;
+    transition: max-height 0.5s ease-in;
+}
+
+/* Header styles */
+.header {
+    background-color: rgba(248, 250, 252, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e2e8f0;
+}
+
+:root.dark .header {
+    background-color: rgba(15, 23, 42, 0.9);
+    border-bottom: 1px solid #1e293b;
+}
+
+/* Google Translate Widget Styles */
+.google-translate-wrapper {
+    display: inline-flex;
+    align-items: center;
+}
+
+.google-translate-wrapper-mobile {
+    display: inline-flex;
+    align-items: center;
+    transform: scale(0.85);
+}
+
+.google-translate-element {
+    min-width: 120px;
+}
+
+/* Style the dropdown itself */
+.goog-te-gadget {
+    font-family: 'Inter', sans-serif;
+    color: transparent !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+    margin: 0 !important;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    background-color: #fff;
+    color: #1e293b;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+:root.dark .goog-te-gadget .goog-te-combo {
+    border-color: #4b5563;
+    background-color: #1e293b;
+    color: #e2e8f0;
+}
+
+.goog-te-gadget .goog-te-combo:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
+}
+
+.goog-te-gadget .goog-te-combo:hover {
+    border-color: #4f46e5;
+}
+
+/* Hide Google's default branding */
+.goog-te-gadget-simple {
+    border: none !important;
+    background-color: transparent !important;
+}
+
+.goog-te-gadget-simple .goog-te-menu-value span {
+    color: #4f46e5 !important;
+}
+
+:root.dark .goog-te-gadget-simple .goog-te-menu-value span {
+    color: #a78bfa !important;
+}
+
+/* Hide the "Powered by Google" text */
+.goog-te-gadget span {
+    display: none !important;
+}
+
+.goog-te-gadget img {
+    display: none !important;
+}
+
+/* Make the Google Translate frame work nicely with the theme */
+.goog-te-banner-frame {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+:root.dark body {
+    top: 0 !important;
+}
+
+body.translated-ltr {
+    top: 0 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-logo {
+        font-size: 1.5rem;
+    }
+    
+    .nav-container {
+        gap: 1rem;
+    }
+    
+    .theme-toggle {
+        width: 40px;
+        height: 22px;
+    }
+    
+    :root.dark .theme-toggle::before {
+        transform: translateX(18px);
+    }
+    
+    .theme-toggle i {
+        font-size: 10px;
+        top: 6px;
+    }
+    
+    .theme-toggle i.fa-sun {
+        left: 5px;
+    }
+    
+    .theme-toggle i.fa-moon {
+        right: 5px;
+    }
+}

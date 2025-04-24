@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Categories | GameGuide Pro</title>
+    <meta name="description" content="Browse our comprehensive collection of game guides by category. Find strategies and tips for all your favorite games.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4f46e5',
+                        secondary: '#7c3aed',
+                        dark: '#0f172a',
+                        darker: '#020617',
+                        navy: '#1e1b4b',
+                        light: '#f8fafc',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'ui-sans-serif', 'system-ui'],
+                        'game': ['"Press Start 2P"', 'cursive']
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Google AdSense (replace with your actual ID) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Header/Navigation -->
+    <div id="header-container"></div>
+
+    <!-- Page Header -->
+    <section class="hero-gradient py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold text-white mb-4">Game Categories</h1>
+                <p class="text-xl text-gray-100 max-w-2xl mx-auto">
+                    Browse our comprehensive collection of game guides by category. Find strategies and tips for all your favorite games.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Filter Section -->
+    <section class="py-10 bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap gap-3 justify-center">
+                <button class="bg-primary text-white px-4 py-2 rounded-full hover:bg-secondary transition">All Games</button>
+                <button class="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition">FPS</button>
+                <button class="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition">MOBA</button>
+                <button class="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition">Action</button>
+                <button class="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition">Battle Royale</button>
+                <button class="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition">RPG</button>
+                <button class="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition">Strategy</button>
+                <button class="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition">Sports</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="py-8 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div id="search-container"></div>
+        </div>
+    </section>
+
+    <!-- Game Categories Grid -->
+    <section class="py-16 bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Game Cards (same as in index.html but with more games) -->
+                <!-- GTA V -->
+                <div class="game-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg transition duration-300 hover:shadow-xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="GTA V" 
+                             class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-primary text-white text-xs font-semibold px-2 py-1 rounded">Action</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">GTA V</h3>
+                            <span class="text-yellow-400">
+                                <i class="fas fa-star"></i> 4.9
+                            </span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Master Los Santos with our comprehensive GTA V guides and strategies.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 text-sm">
+                                <i class="fas fa-book-open mr-1"></i> 24 Guides
+                            </span>
+                            <a href="guide.html" class="text-primary dark:text-purple-400 hover:text-secondary dark:hover:text-purple-300 text-sm font-semibold transition">
+                                View All <i class="fas fa-chevron-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional game cards would go here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <script src="../assets/js/scripts.js"></script>
+    <script>
+        // Load components
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('../components/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-container').innerHTML = data;
+                });
+                
+            fetch('../components/search.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('search-container').innerHTML = data;
+                });
+                
+            fetch('../components/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<header class="header sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-3">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-gamepad text-primary text-2xl"></i>
+                <a href="../pages/index.html" class="text-2xl font-bold text-gray-900 dark:text-white header-logo">
+                    <span class="text-primary">Game</span><span>Guide</span><span class="text-secondary">Pro</span>
+                </a>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-4 nav-container">
+                <nav class="flex space-x-6">
+                    <a href="../pages/index.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Home</a>
+                    <a href="../pages/categories.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Games</a>
+                    <a href="../pages/guide.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Guides</a>
+                    <a href="../pages/tips.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Quick Tips</a>
+                    <a href="../pages/about.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">About</a>
+                    <a href="../pages/contact.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Contact</a>
+                </nav>
+                
+                <!-- Google Translate Widget -->
+                <div class="google-translate-wrapper relative">
+                    <div id="google_translate_element" class="google-translate-element"></div>
+                </div>
+                
+                <!-- Fixed Theme Toggle Button -->
+                <button id="theme-toggle" class="theme-toggle ml-4" aria-label="Toggle Theme" title="Toggle between light and dark theme" type="button">
+                    <div class="sun-moon-container">
+                        <div class="sun-icon">
+                            <i class="fas fa-sun" aria-hidden="true"></i>
+                        </div>
+                        <div class="moon-icon">
+                            <i class="fas fa-moon" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <span class="sr-only">Toggle Theme</span>
+                </button>
+                
+                <button class="bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-full hover:opacity-90 transition">
+                    <i class="fas fa-user mr-2"></i>Sign In
+                </button>
+            </div>
+            
+            <div class="flex items-center space-x-4 md:hidden">
+                <!-- Mobile Google Translate -->
+                <div class="google-translate-wrapper-mobile relative">
+                    <div id="google_translate_element_mobile" class="google-translate-element"></div>
+                </div>
+                
+                <!-- Fixed Mobile Theme Toggle Button -->
+                <button id="theme-toggle-mobile" class="theme-toggle" aria-label="Toggle Theme" title="Toggle between light and dark theme" type="button">
+                    <div class="sun-moon-container">
+                        <div class="sun-icon">
+                            <i class="fas fa-sun" aria-hidden="true"></i>
+                        </div>
+                        <div class="moon-icon">
+                            <i class="fas fa-moon" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <span class="sr-only">Toggle Theme</span>
+                </button>
+                
+                <button id="mobile-menu-button" class="text-gray-700 dark:text-gray-300 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-gray-100 dark:bg-gray-900 mt-2 rounded-lg">
+            <div class="px-4 py-3 flex flex-col space-y-3">
+                <a href="../pages/index.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Home</a>
+                <a href="../pages/categories.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Games</a>
+                <a href="../pages/guide.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Guides</a>
+                <a href="../pages/tips.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Quick Tips</a>
+                <a href="../pages/about.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">About</a>
+                <a href="../pages/contact.html" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Contact</a>
+                <button class="bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-full hover:opacity-90 transition w-full">
+                    <i class="fas fa-user mr-2"></i>Sign In
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Theme debug helper -->
+    <script>
+        // Enhanced debugging for theme toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Header loaded. Theme is:', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+            console.log('Desktop theme toggle exists:', !!document.getElementById('theme-toggle'));
+            console.log('Mobile theme toggle exists:', !!document.getElementById('theme-toggle-mobile'));
+            
+            // Add direct click handlers as a fallback
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+            
+            function headerThemeToggleHandler() {
+                console.log('Header direct theme toggle clicked');
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    document.documentElement.classList.add('light');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    document.documentElement.classList.remove('light');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+            
+            if (themeToggle) themeToggle.addEventListener('click', headerThemeToggleHandler);
+            if (themeToggleMobile) themeToggleMobile.addEventListener('click', headerThemeToggleHandler);
+        });
+    </script>
+    
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false,
+                includedLanguages: 'ar,zh-CN,fr,de,hi,it,ja,ko,pt,ru,es'
+            }, 'google_translate_element');
+            
+            // Initialize the mobile version
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false,
+                includedLanguages: 'ar,zh-CN,fr,de,hi,it,ja,ko,pt,ru,es'
+            }, 'google_translate_element_mobile');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</header>

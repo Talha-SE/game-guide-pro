@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Guides | GameGuide Pro</title>
+    <meta name="description" content="Comprehensive game guides for popular titles like GTA V, Valorant, Mobile Legends and more. Improve your gameplay with expert strategies.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4f46e5',
+                        secondary: '#7c3aed',
+                        dark: '#0f172a',
+                        darker: '#020617',
+                        navy: '#1e1b4b',
+                        light: '#f8fafc',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'ui-sans-serif', 'system-ui'],
+                        'game': ['"Press Start 2P"', 'cursive']
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Google AdSense (replace with your actual ID) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Header/Navigation -->
+    <div id="header-container"></div>
+
+    <!-- Page Header -->
+    <section class="hero-gradient py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold text-white mb-4">Game Guides</h1>
+                <p class="text-xl text-gray-100 max-w-2xl mx-auto">
+                    Detailed strategies, walkthroughs, and expert advice to help you master your favorite games.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="py-8 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div id="search-container"></div>
+        </div>
+    </section>
+
+    <!-- Guide Categories -->
+    <section class="py-10 bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap gap-3 justify-center">
+                <button class="bg-primary text-white px-4 py-2 rounded-full hover:bg-secondary transition">All Guides</button>
+                <button class="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition">Beginners</button>
+                <button class="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition">Advanced</button>
+                <button class="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition">Walkthroughs</button>
+                <button class="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition">Tutorials</button>
+                <button class="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition">Achievement Guides</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Guide -->
+    <section class="py-12 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Featured Guide</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="bg-gray-100 dark:bg-gray-900 rounded-xl overflow-hidden shadow-xl">
+                <div class="grid grid-cols-1 md:grid-cols-3">
+                    <div class="md:col-span-1">
+                        <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="GTA V Cayo Perico Heist" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:col-span-2 p-8">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-primary text-white text-sm font-semibold px-3 py-1 rounded-full mr-3">GTA V</span>
+                            <span class="text-gray-600 dark:text-gray-400">
+                                <i class="far fa-calendar-alt mr-1"></i> Updated June 15, 2023
+                            </span>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">The Ultimate Cayo Perico Heist Guide: Solo Method</h3>
+                        
+                        <div class="flex items-center mb-6">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" 
+                                 alt="Author" 
+                                 class="w-10 h-10 rounded-full mr-3">
+                            <div>
+                                <p class="text-gray-900 dark:text-white font-medium">Marcus Chen</p>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm">FPS & Action Specialist</p>
+                            </div>
+                            <div class="ml-auto flex items-center text-yellow-400">
+                                <i class="fas fa-star mr-1"></i>
+                                <i class="fas fa-star mr-1"></i>
+                                <i class="fas fa-star mr-1"></i>
+                                <i class="fas fa-star mr-1"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="text-gray-600 dark:text-gray-400 text-sm ml-2">4.7 (328 ratings)</span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">
+                            The Cayo Perico Heist is the most profitable solo activity in GTA Online. This comprehensive guide covers every aspect from setup to finale, including the best approach, weapon loadouts, entry and escape points, and how to maximize your profits with minimal time investment.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-3 mb-6">
+                            <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm">
+                                <i class="fas fa-clock mr-1"></i> 20-25 min completion
+                            </span>
+                            <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm">
+                                <i class="fas fa-coins mr-1"></i> ~$1.5M profit
+                            </span>
+                            <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm">
+                                <i class="fas fa-chart-line mr-1"></i> Beginner-friendly
+                            </span>
+                            <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm">
+                                <i class="fas fa-eye mr-1"></i> 158K views
+                            </span>
+                        </div>
+                        
+                        <button class="bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                            <i class="fas fa-book-open mr-2"></i> Read Full Guide
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Guides -->
+    <section class="py-16 bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Recently Updated Guides</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Our most recently updated and comprehensive game guides to help you stay current with game changes.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Guide 1 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                    <div class="relative h-48">
+                        <img src="https://images.unsplash.com/photo-1618335829737-2228915674e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Valorant Guide" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded">Valorant</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-gray-500 text-sm">
+                                <i class="far fa-calendar-alt mr-1"></i> Updated 3 days ago
+                            </span>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Mastering Jett: Complete Agent Guide</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                            Learn how to utilize Jett's abilities effectively, master her movement mechanics, and dominate with her signature knives.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" 
+                                     alt="Author" 
+                                     class="w-8 h-8 rounded-full mr-2">
+                                <span class="text-gray-700 dark:text-gray-300 text-sm">By Sarah</span>
+                            </div>
+                            <button class="text-primary dark:text-purple-400 hover:text-secondary dark:hover:text-purple-300 text-sm font-semibold transition">
+                                Read Guide <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Guide 2 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                    <div class="relative h-48">
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Mobile Legends Guide" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded">Mobile Legends</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-gray-500 text-sm">
+                                <i class="far fa-calendar-alt mr-1"></i> Updated 1 week ago
+                            </span>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Gusion: Complete Hero Guide & Combos</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                            Master Gusion's lightning-fast combos, optimal builds for different situations, and positioning strategies to dominate the mid lane.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <img src="https://randomuser.me/api/portraits/men/75.jpg" 
+                                     alt="Author" 
+                                     class="w-8 h-8 rounded-full mr-2">
+                                <span class="text-gray-700 dark:text-gray-300 text-sm">By Alex</span>
+                            </div>
+                            <button class="text-primary dark:text-purple-400 hover:text-secondary dark:hover:text-purple-300 text-sm font-semibold transition">
+                                Read Guide <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Guide 3 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                    <div class="relative h-48">
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Fortnite Guide" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-green-600 text-white text-xs font-semibold px-2 py-1 rounded">Fortnite</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-gray-500 text-sm">
+                                <i class="far fa-calendar-alt mr-1"></i> Updated 2 weeks ago
+                            </span>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Season 4: Best Landing Spots & Loot Routes</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                            Discover the most profitable landing spots in the new season, with optimal loot routes and rotation strategies for competitive play.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" 
+                                     alt="Author" 
+                                     class="w-8 h-8 rounded-full mr-2">
+                                <span class="text-gray-700 dark:text-gray-300 text-sm">By Jessica</span>
+                            </div>
+                            <button class="text-primary dark:text-purple-400 hover:text-secondary dark:hover:text-purple-300 text-sm font-semibold transition">
+                                Read Guide <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <button class="bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition">
+                    <i class="fas fa-book mr-2"></i> Load More Guides
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-gradient-to-r from-primary to-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-white mb-4">Stay Updated</h2>
+                <p class="text-gray-300 mb-8">
+                    Subscribe to our newsletter to receive the latest game guides, tips, and exclusive content directly to your inbox.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+                    <input type="email" 
+                           placeholder="Your email address" 
+                           class="flex-grow bg-white/10 border border-white/20 text-white px-5 py-3 rounded-lg focus:outline-none focus:border-primary transition placeholder-gray-400">
+                    <button class="bg-gradient-to-r from-primary to-secondary text-white font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition whitespace-nowrap">
+                        Subscribe Now
+                    </button>
+                </div>
+                <p class="text-gray-400 text-xs mt-3">
+                    We respect your privacy. Unsubscribe at any time.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <script src="../assets/js/scripts.js"></script>
+    <script>
+        // Load components
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('../components/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-container').innerHTML = data;
+                });
+                
+            fetch('../components/search.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('search-container').innerHTML = data;
+                });
+                
+            fetch('../components/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                });
+        });
+    </script>
+</body>
+</html>
