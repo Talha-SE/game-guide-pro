@@ -42,30 +42,12 @@
       "use": "@vercel/static"
     }
   ],
-  "routes": [
-    {
-      "src": "/assets/(.*)",
-      "dest": "/src/assets/$1"
-    },
-    {
-      "src": "/components/(.*)",
-      "dest": "/src/components/$1"
-    },
-    {
-      "src": "/guides/(.*)\\.html",
-      "dest": "/src/guides/$1.html"
-    },
-    {
-      "src": "/(.*)\\.html",
-      "dest": "/src/pages/$1.html"
-    },
-    {
-      "src": "/",
-      "dest": "/src/pages/index.html"
-    }
-  ],
   "rewrites": [
-    { "source": "/", "destination": "/index.html" },
+    { "source": "/", "destination": "/src/pages/index.html" },
+    { "source": "/assets/(.*)", "destination": "/src/assets/$1" },
+    { "source": "/components/(.*)", "destination": "/src/components/$1" },
+    { "source": "/guides/(.*)", "destination": "/src/guides/$1.html" },
+    { "source": "/(categories|guide|tips|about|contact)", "destination": "/src/pages/$1.html" },
     { "source": "/(.*)", "destination": "/src/$1" }
   ],
   "cleanUrls": true

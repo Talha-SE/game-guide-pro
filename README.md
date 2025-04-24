@@ -91,17 +91,23 @@ game-guide-website
    - Vercel will automatically redeploy your site whenever you push changes to your GitHub repository
 
 ### vercel.json Configuration
-If you need special routing or headers, edit your `vercel.json` file:
+If you need special routing, use the `rewrites` property in your `vercel.json` file:
 
 ```json
 {
   "rewrites": [
+    { "source": "/", "destination": "/src/pages/index.html" },
+    { "source": "/assets/(.*)", "destination": "/src/assets/$1" },
+    { "source": "/components/(.*)", "destination": "/src/components/$1" },
+    { "source": "/guides/(.*)", "destination": "/src/guides/$1.html" },
+    { "source": "/(categories|guide|tips|about|contact)", "destination": "/src/pages/$1.html" },
     { "source": "/(.*)", "destination": "/src/$1" }
-  ]
+  ],
+  "cleanUrls": true
 }
 ```
 
-This example configuration will route requests to files in your src directory.
+Note: Vercel does not allow `routes` to be used alongside `rewrites`, `redirects`, `headers`, `cleanUrls`, or `trailingSlash` in the same configuration.
 
 ## Contribution
 Feel free to contribute by adding more game guides, tips, or improving the design. Pull requests are welcome!
