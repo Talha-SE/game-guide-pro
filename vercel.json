@@ -17,6 +17,10 @@
     { "source": "/tips", "destination": "/src/pages/tips.html" },
     { "source": "/about", "destination": "/src/pages/about.html" },
     { "source": "/contact", "destination": "/src/pages/contact.html" },
+    
+    { "source": "/pages/:page", "destination": "/src/pages/:page.html" },
+    { "source": "/pages/:page.html", "destination": "/src/pages/:page.html" },
+    
     { "source": "/guides/(.*)", "destination": "/src/guides/$1.html" },
     { "source": "/assets/(.*)", "destination": "/src/assets/$1" },
     { "source": "/components/(.*)", "destination": "/src/components/$1" }
