@@ -1,10 +1,4 @@
 <header class="header sticky top-0 z-50">
-    <style>
-        /* Ensure the dropdown is above other UI elements */
-        #language-menu {
-            z-index: 1000;
-        }
-    </style>
     <div class="container mx-auto px-4 py-3">
         <div class="flex justify-between items-center">
             <div class="flex items-center space-x-2">
@@ -24,22 +18,9 @@
                     <a href="../pages/about.html" id="nav-about" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">About</a>
                     <a href="../pages/contact.html" id="nav-contact" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Contact</a>
                 </nav>
-              
-                <!-- Translation Button -->
-                <div class="relative">
-                    <button id="google-translate-button" class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition">
-                        <i class="fas fa-globe mr-2"></i>Translate
-                    </button>
-                    <div id="language-menu" class="absolute top-full mt-2 hidden bg-white dark:bg-gray-800 shadow-lg rounded-lg p-2 w-48">
-                        <ul class="space-y-2">
-                            <li><button class="language-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700" data-lang="en">English</button></li>
-                            <li><button class="language-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700" data-lang="es">Spanish</button></li>
-                            <li><button class="language-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700" data-lang="fr">French</button></li>
-                            <li><button class="language-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700" data-lang="de">German</button></li>
-                            <li><button class="language-option w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700" data-lang="zh-CN">Chinese</button></li>
-                        </ul>
-                    </div>
-                </div>
+                
+                <!-- Google Translate Button -->
+                <div class="relative" id="google_translate_element"></div>
                 
                 <!-- Fixed Theme Toggle Button -->
                 <button id="theme-toggle" class="theme-toggle ml-4" aria-label="Toggle Theme" title="Toggle between light and dark theme" type="button">
@@ -61,9 +42,7 @@
             
             <div class="flex items-center space-x-4 md:hidden">
                 <!-- Mobile Google Translate -->
-                <div class="google-translate-wrapper-mobile relative">
-                    <div id="google_translate_element_mobile" class="google-translate-element"></div>
-                </div>
+                <div id="google_translate_element_mobile"></div>
                 
                 <!-- Fixed Mobile Theme Toggle Button -->
                 <button id="theme-toggle-mobile" class="theme-toggle" aria-label="Toggle Theme" title="Toggle between light and dark theme" type="button">
@@ -211,67 +190,28 @@
     <!-- Google Translate Script -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
-            console.log('Google Translate initialized'); // Debugging log
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                autoDisplay: false,
-                includedLanguages: 'ar,zh-CN,fr,de,hi,it,ja,ko,pt,ru,es'
-            }, 'google_translate_element');
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                    autoDisplay: false,
+                    includedLanguages: 'ar,zh-CN,fr,de,hi,it,ja,ko,pt,ru,es'
+                },
+                'google_translate_element'
+            );
             
             // Initialize the mobile version
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                autoDisplay: false,
-                includedLanguages: 'ar,zh-CN,fr,de,hi,it,ja,ko,pt,ru,es'
-            }, 'google_translate_element_mobile');
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                    autoDisplay: false,
+                    includedLanguages: 'ar,zh-CN,fr,de,hi,it,ja,ko,pt,ru,es'
+                },
+                'google_translate_element_mobile'
+            );
         }
-
-        // Load Google Translate script
-        const script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-        document.body.appendChild(script);
-
-        // Toggle visibility of the Google Translate dropdown
-        document.addEventListener('DOMContentLoaded', function () {
-            const translateButton = document.getElementById('google-translate-button');
-            const translateElement = document.getElementById('google_translate_element');
-            const languageMenu = document.getElementById('language-menu');
-            const languageOptions = document.querySelectorAll('.language-option');
-
-            if (translateButton && translateElement) {
-                translateButton.addEventListener('click', () => {
-                    languageMenu.classList.toggle('hidden');
-                });
-            }
-
-            // Update the Google Translate widget when a language is selected
-            languageOptions.forEach(option => {
-                option.addEventListener('click', (e) => {
-                    const selectedLang = e.target.getAttribute('data-lang');
-                    const translateElement = document.querySelector('.goog-te-combo');
-                    if (translateElement) {
-                        translateElement.value = selectedLang;
-                        translateElement.dispatchEvent(new Event('change'));
-                    }
-                    languageMenu.classList.add('hidden'); // Hide the menu after selection
-                });
-            });
-
-            // Close the menu if clicked outside
-            document.addEventListener('click', (e) => {
-                if (!languageMenu.contains(e.target) && e.target !== translateButton) {
-                    languageMenu.classList.add('hidden');
-                }
-            });
-
-            // Ensure dropdown visibility is not restricted by parent containers
-            const translateWrapper = document.querySelector('.google-translate-wrapper');
-            if (translateWrapper) {
-                translateWrapper.style.position = 'relative'; // Ensure proper positioning
-            }
-        });
     </script>
+
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </header>
