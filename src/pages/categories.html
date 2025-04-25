@@ -73,40 +73,128 @@
         </div>
     </section>
 
-    <!-- Game Categories Grid -->
-    <section class="py-16 bg-gray-100 dark:bg-gray-900">
+    <!-- Popular Games Section -->
+    <section id="games" class="py-16 bg-gray-100 dark:bg-gray-900">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                <!-- Game Cards (same as in index.html but with more games) -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Popular Game Categories</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Browse our collection of game guides categorized by popular titles. Select your game to find expert strategies.
+                </p>
+            </div>
+            
+            <!-- Search Box -->
+            <div id="search-container"></div>
+            
+            <!-- Game Cards - Updated for cleaner design and smoother animations -->
+            <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- GTA V -->
-                <div class="game-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg transition duration-300 hover:shadow-xl">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                             alt="GTA V" 
-                             class="w-full h-full object-cover transition duration-500 hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4">
-                            <span class="bg-primary text-white text-xs font-semibold px-2 py-1 rounded">Action</span>
+                <a href="../gta5/gta5.html" class="group block transform transition duration-500 hover:scale-[1.02] focus:outline-none">
+                    <div class="game-card h-full bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl border border-gray-100 dark:border-gray-700">
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="../assets/Images/gta5.webp" 
+                                alt="GTA V" 
+                                class="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <span class="bg-primary text-white text-xs font-semibold px-3 py-1.5 rounded-full">Action</span>
+                            </div>
+                            <div class="absolute top-4 right-4 bg-black/60 text-white rounded-full h-10 w-10 flex items-center justify-center opacity-0 transform translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors duration-300">GTA V</h3>
+                                <span class="flex items-center text-yellow-400">
+                                    <i class="fas fa-star mr-1"></i> 
+                                    <span class="text-sm">4.9</span>
+                                </span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Master Los Santos with our comprehensive GTA V guides and strategies.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-500 text-sm">
+                                    <i class="fas fa-book-open mr-1"></i> 24 Guides
+                                </span>
+                                <span class="text-primary dark:text-purple-400 text-sm font-semibold group-hover:text-secondary transition-colors duration-300 flex items-center">
+                                    View All <i class="fas fa-chevron-right ml-1.5 transform group-hover:translate-x-1 transition-transform duration-300"></i>
+                                </span>
+                            </div>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">GTA V</h3>
-                            <span class="text-yellow-400">
-                                <i class="fas fa-star"></i> 4.9
-                            </span>
+                </a>
+                
+                <!-- Valorant -->
+                <a href="../valorant/valorant.html" class="group block transform transition duration-500 hover:scale-[1.02] focus:outline-none">
+                    <div class="game-card h-full bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl border border-gray-100 dark:border-gray-700">
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="../assets/Images/valorant.webp" 
+                                alt="Valorant" 
+                                class="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <span class="bg-red-600 text-white text-xs font-semibold px-3 py-1.5 rounded-full">FPS</span>
+                            </div>
+                            <div class="absolute top-4 right-4 bg-black/60 text-white rounded-full h-10 w-10 flex items-center justify-center opacity-0 transform translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
                         </div>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Master Los Santos with our comprehensive GTA V guides and strategies.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-500 text-sm">
-                                <i class="fas fa-book-open mr-1"></i> 24 Guides
-                            </span>
-                            <a href="guide.html" class="text-primary dark:text-purple-400 hover:text-secondary dark:hover:text-purple-300 text-sm font-semibold transition">
-                                View All <i class="fas fa-chevron-right ml-1"></i>
-                            </a>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-red-600 transition-colors duration-300">Valorant</h3>
+                                <span class="flex items-center text-yellow-400">
+                                    <i class="fas fa-star mr-1"></i> 
+                                    <span class="text-sm">4.8</span>
+                                </span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Climb the ranks with our Valorant agent guides, map strategies, and pro tips.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-500 text-sm">
+                                    <i class="fas fa-book-open mr-1"></i> 18 Guides
+                                </span>
+                                <span class="text-red-600 dark:text-red-400 text-sm font-semibold group-hover:text-red-500 transition-colors duration-300 flex items-center">
+                                    View All <i class="fas fa-chevron-right ml-1.5 transform group-hover:translate-x-1 transition-transform duration-300"></i>
+                                </span>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
+                
+                <!-- Whiteout Survival -->
+                <a href="../guides/whiteout-survival.html" class="group block transform transition duration-500 hover:scale-[1.02] focus:outline-none">
+                    <div class="game-card h-full bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl border border-gray-100 dark:border-gray-700">
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="../assets/Images/whiteout-survival.jpg" 
+                                alt="Whiteout Survival" 
+                                class="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <span class="bg-blue-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full">Survival</span>
+                            </div>
+                            <div class="absolute top-4 right-4 bg-black/60 text-white rounded-full h-10 w-10 flex items-center justify-center opacity-0 transform translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-500 transition-colors duration-300">Whiteout Survival</h3>
+                                <span class="flex items-center text-yellow-400">
+                                    <i class="fas fa-star mr-1"></i> 
+                                    <span class="text-sm">4.9</span>
+                                </span>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Master the frozen apocalypse with our comprehensive guides on heroes, buildings, and research strategies.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-500 text-sm">
+                                    <i class="fas fa-book-open mr-1"></i> 15 Guides
+                                </span>
+                                <span class="text-blue-500 dark:text-blue-400 text-sm font-semibold group-hover:text-blue-400 transition-colors duration-300 flex items-center">
+                                    View All <i class="fas fa-chevron-right ml-1.5 transform group-hover:translate-x-1 transition-transform duration-300"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
                 
                 <!-- Additional game cards would go here -->
             </div>
