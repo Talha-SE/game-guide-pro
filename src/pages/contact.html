@@ -50,7 +50,242 @@
         </div>
     </section>
     
-    <!-- Contact form section would go here -->
+    <!-- Main Contact Section -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-3 gap-10">
+                <!-- Contact Methods Column -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8 transform hover:scale-105 transition-all duration-300">
+                        <h3 class="text-2xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">Get In Touch</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-gradient-to-r from-primary to-secondary p-3 rounded-lg text-white">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-700 dark:text-gray-200">Email Us</h4>
+                                    <p class="text-gray-600 dark:text-gray-400">info.wincraft.pro@gmail.com</p>
+                                    <p class="text-sm text-gray-500 dark:text-gray-500 mt-1">We'll respond within 24 hours</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-gradient-to-r from-primary to-secondary p-3 rounded-lg text-white">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-700 dark:text-gray-200">Discord</h4>
+                                    <p class="text-gray-600 dark:text-gray-400">Join our community</p>
+                                    <a href="#" class="text-primary hover:text-secondary transition mt-2 inline-block">
+                                        <i class="fab fa-discord mr-2"></i>Wincraft Hub
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-gradient-to-r from-primary to-secondary p-3 rounded-lg text-white">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-700 dark:text-gray-200">Support Hours</h4>
+                                    <p class="text-gray-600 dark:text-gray-400">Monday - Friday: 9AM - 6PM EST</p>
+                                    <p class="text-gray-600 dark:text-gray-400">Weekend: 10AM - 3PM EST</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10">
+                            <h4 class="font-bold text-gray-700 dark:text-gray-200 mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-gray-100 dark:bg-gray-700 hover:bg-primary hover:text-white dark:hover:bg-primary transition p-3 rounded-full text-gray-600 dark:text-gray-300">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="bg-gray-100 dark:bg-gray-700 hover:bg-primary hover:text-white dark:hover:bg-primary transition p-3 rounded-full text-gray-600 dark:text-gray-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="bg-gray-100 dark:bg-gray-700 hover:bg-primary hover:text-white dark:hover:bg-primary transition p-3 rounded-full text-gray-600 dark:text-gray-300">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="#" class="bg-gray-100 dark:bg-gray-700 hover:bg-primary hover:text-white dark:hover:bg-primary transition p-3 rounded-full text-gray-600 dark:text-gray-300">
+                                    <i class="fab fa-twitch"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form Column -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 relative overflow-hidden">
+                        <!-- Decorative gaming elements -->
+                        <div class="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-3xl"></div>
+                        <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-full blur-3xl"></div>
+                        
+                        <h3 class="text-2xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text relative">Send Us A Message</h3>
+                        
+                        <form id="contact-form" class="space-y-6 relative">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="name">Your Name</label>
+                                    <div class="relative">
+                                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <i class="fas fa-user text-gray-400"></i>
+                                        </div>
+                                        <input type="text" id="name" name="name" class="pl-10 w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary dark:text-white" placeholder="John Doe" required>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="email">Your Email</label>
+                                    <div class="relative">
+                                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <i class="fas fa-envelope text-gray-400"></i>
+                                        </div>
+                                        <input type="email" id="email" name="email" class="pl-10 w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary dark:text-white" placeholder="email@example.com" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="subject">Subject</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <i class="fas fa-tag text-gray-400"></i>
+                                    </div>
+                                    <select id="subject" name="subject" class="pl-10 w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary dark:text-white">
+                                        <option value="">Select a topic</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="support">Game Support</option>
+                                        <option value="content">Content Suggestion</option>
+                                        <option value="partnership">Partnership Opportunity</option>
+                                        <option value="bug">Report a Bug</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="message">Your Message</label>
+                                <div class="relative">
+                                    <div class="absolute top-3 left-3 pointer-events-none">
+                                        <i class="fas fa-comment text-gray-400"></i>
+                                    </div>
+                                    <textarea id="message" name="message" rows="6" class="pl-10 w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary dark:text-white" placeholder="How can we help you?" required></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-2">
+                                <input type="checkbox" id="newsletter" name="newsletter" class="rounded text-primary focus:ring-primary">
+                                <label for="newsletter" class="text-sm text-gray-600 dark:text-gray-400">Subscribe to our newsletter for gaming tips and updates</label>
+                            </div>
+                            
+                            <div class="text-right">
+                                <button type="submit" class="px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-medium rounded-lg hover:opacity-90 transition focus:ring-4 focus:ring-primary/50 group">
+                                    <span class="group-hover:mr-2 transition-all duration-200">Send Message</span>
+                                    <i class="fas fa-paper-plane group-hover:translate-x-1 transition-transform duration-200"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQs Section -->
+    <section class="py-16 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">Frequently Asked Questions</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                <!-- FAQ Item 1 -->
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 hover:shadow-lg transition">
+                    <h3 class="font-bold text-xl text-gray-800 dark:text-white mb-2 flex items-center">
+                        <span class="bg-gradient-to-r from-primary to-secondary text-white p-1 rounded mr-3 text-xs"><i class="fas fa-question"></i></span>
+                        How quickly will I receive a response?
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">Our support team typically responds within 24 hours during business days. For urgent matters, we recommend joining our Discord server for faster assistance.</p>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 hover:shadow-lg transition">
+                    <h3 class="font-bold text-xl text-gray-800 dark:text-white mb-2 flex items-center">
+                        <span class="bg-gradient-to-r from-primary to-secondary text-white p-1 rounded mr-3 text-xs"><i class="fas fa-question"></i></span>
+                        Can I submit my own game guide?
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">Absolutely! We welcome community contributions. Please use the form above and select "Content Suggestion" as the subject to submit your guide for review.</p>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 hover:shadow-lg transition">
+                    <h3 class="font-bold text-xl text-gray-800 dark:text-white mb-2 flex items-center">
+                        <span class="bg-gradient-to-r from-primary to-secondary text-white p-1 rounded mr-3 text-xs"><i class="fas fa-question"></i></span>
+                        Do you offer partnership opportunities?
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">Yes, we collaborate with game developers, streamers, and content creators. Select "Partnership Opportunity" in the contact form to discuss potential collaborations.</p>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 hover:shadow-lg transition">
+                    <h3 class="font-bold text-xl text-gray-800 dark:text-white mb-2 flex items-center">
+                        <span class="bg-gradient-to-r from-primary to-secondary text-white p-1 rounded mr-3 text-xs"><i class="fas fa-question"></i></span>
+                        How can I report an error in a guide?
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">We appreciate your help improving our content! Please use the contact form with the subject "Report a Bug" and provide specific details about the error you found.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gaming Community CTA -->
+    <section class="py-16 bg-gradient-to-r from-primary to-secondary">
+        <div class="container mx-auto px-4 text-center">
+            <div class="relative inline-block">
+                <span class="absolute inset-0 bg-white/20 blur-2xl rounded-full"></span>
+                <i class="fas fa-gamepad text-white text-5xl relative"></i>
+            </div>
+            
+            <h2 class="text-3xl font-bold text-white mt-6 mb-3">Join Our Gaming Community</h2>
+            <p class="text-lg text-gray-100 max-w-2xl mx-auto mb-8">Connect with fellow gamers, participate in events, and get exclusive tips directly from our team.</p>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#" class="px-8 py-3 bg-white text-primary hover:bg-gray-100 font-medium rounded-lg flex items-center gap-2 transition">
+                    <i class="fab fa-discord text-xl"></i>
+                    Discord Server
+                </a>
+                <a href="#" class="px-8 py-3 bg-gray-900 text-white hover:bg-gray-800 font-medium rounded-lg flex items-center gap-2 transition">
+                    <i class="fab fa-twitch text-xl"></i>
+                    Live Streams
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Form Handling Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contact-form');
+            
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // You would typically send the form data to your server here
+                    // For now, we'll just show a success message
+                    
+                    const formData = new FormData(form);
+                    const formValues = Object.fromEntries(formData.entries());
+                    
+                    console.log('Form submitted:', formValues);
+                    
+                    // Show success message (you could implement a more sophisticated notification)
+                    alert('Thanks for your message! We\'ll get back to you soon.');
+                    form.reset();
+                });
+            }
+        });
+    </script>
     
     <!-- Footer -->
     <div id="footer-container"></div>
