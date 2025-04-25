@@ -19,6 +19,12 @@
                     <a href="../pages/contact.html" id="nav-contact" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Contact</a>
                 </nav>
               
+                <div class="google-translate-wrapper relative">
+                    <button id="google-translate-button" class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+                        <i class="fas fa-globe mr-2"></i>Translate
+                    </button>
+                    <div id="google_translate_element" class="absolute top-full mt-2 hidden bg-white dark:bg-gray-800 shadow-lg rounded-lg p-2"></div>
+                </div>
                 
                 <!-- Fixed Theme Toggle Button -->
                 <button id="theme-toggle" class="theme-toggle ml-4" aria-label="Toggle Theme" title="Toggle between light and dark theme" type="button">
@@ -190,6 +196,7 @@
     <!-- Google Translate Script -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
+            console.log('Google Translate initialized'); // Debugging log
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
@@ -205,6 +212,23 @@
                 includedLanguages: 'ar,zh-CN,fr,de,hi,it,ja,ko,pt,ru,es'
             }, 'google_translate_element_mobile');
         }
+
+        // Load Google Translate script
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        document.body.appendChild(script);
+
+        // Toggle visibility of the Google Translate dropdown
+        document.addEventListener('DOMContentLoaded', function () {
+            const translateButton = document.getElementById('google-translate-button');
+            const translateElement = document.getElementById('google_translate_element');
+
+            if (translateButton && translateElement) {
+                translateButton.addEventListener('click', () => {
+                    translateElement.classList.toggle('hidden');
+                });
+            }
+        });
     </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </header>
