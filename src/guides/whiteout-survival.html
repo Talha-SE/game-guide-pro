@@ -31,7 +31,46 @@
     </script>
     <!-- Google AdSense (replace with your actual ID) -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1011350302346953"
-    crossorigin="anonymous"></script></head>
+    crossorigin="anonymous"></script>
+    <style>
+        .guide-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .guide-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .featured-guide-card {
+            transition: all 0.4s ease;
+        }
+        
+        .featured-guide-card:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .card-tag {
+            transition: all 0.3s ease;
+        }
+        
+        .card-tag:hover {
+            transform: scale(1.05);
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
 <body class="min-h-screen flex flex-col">
     <!-- Header -->
     <div id="header-container"></div>
@@ -50,43 +89,43 @@
 
     <!-- Search Section -->
     <section class="py-8 bg-white dark:bg-gray-800">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-4 max-w-6xl">
             <div id="search-container"></div>
         </div>
     </section>
 
     <!-- Guide Categories -->
-    <section class="py-10 bg-gray-100 dark:bg-gray-900">
-        <div class="container mx-auto px-4">
+    <section class="py-8 bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto px-4 max-w-6xl">
             <div class="flex flex-wrap gap-3 justify-center">
-                <button class="bg-primary text-white px-4 py-2 rounded-full hover:bg-secondary transition">All Guides</button>
-                <button class="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition">Heroes</button>
-                <button class="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition">Buildings</button>
-                <button class="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition">Research</button>
-                <button class="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition">Chief Gears</button>
-                <button class="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition">Territory</button>
+                <button class="bg-primary text-white px-6 py-3 rounded-full hover:bg-secondary transition shadow-md">All Guides</button>
+                <button class="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-6 py-3 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition shadow-md">Heroes</button>
+                <button class="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-6 py-3 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition shadow-md">Buildings</button>
+                <button class="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-6 py-3 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition shadow-md">Research</button>
+                <button class="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-6 py-3 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition shadow-md">Chief Gears</button>
+                <button class="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-6 py-3 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition shadow-md">Territory</button>
             </div>
         </div>
     </section>
 
     <!-- Featured Guide -->
-    <section class="py-12 bg-white dark:bg-gray-800">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-8">
+    <section class="py-16 bg-white dark:bg-gray-800 reveal">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Featured Guide</h2>
-                <div class="w-20 h-1 bg-primary mx-auto"></div>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
             </div>
             
-            <div class="bg-gray-100 dark:bg-gray-900 rounded-xl overflow-hidden shadow-xl">
+            <div class="featured-guide-card bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-xl max-w-5xl mx-auto transform">
                 <div class="grid grid-cols-1 md:grid-cols-3">
-                    <div class="md:col-span-1">
-                        <img src="https://cdn.akamai.steamstatic.com/steam/apps/1840740/ss_2bdd12801092db24e948731e9fa5f2f6c9afca2a.1920x1080.jpg" 
+                    <div class="md:col-span-1 h-full">
+                        <img src="../assets/Images/hero-best.webp" 
                              alt="Whiteout Survival Heroes Guide" 
                              class="w-full h-full object-cover">
                     </div>
                     <div class="md:col-span-2 p-8">
                         <div class="flex items-center mb-4">
-                            <span class="bg-blue-500 text-white text-sm font-semibold px-3 py-1 rounded-full mr-3">Heroes</span>
+                            <span class="bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-semibold px-4 py-1.5 rounded-full mr-3 shadow-sm card-tag">Heroes</span>
                             <span class="text-gray-600 dark:text-gray-400">
                                 <i class="far fa-calendar-alt mr-1"></i> Updated July 10, 2023
                             </span>
@@ -105,23 +144,23 @@
                             </div>
                         </div>
                         
-                        <p class="text-gray-600 dark:text-gray-400 mb-6">
+                        <p class="text-gray-600 dark:text-gray-400 mb-8">
                             Discover the best heroes for each role in Whiteout Survival and learn how to optimize their stats, skills, and equipment. This comprehensive guide covers the best hero combinations, skill priorities, and gear recommendations for PvE and PvP gameplay.
                         </p>
                         
-                        <div class="flex flex-wrap gap-3 mb-6">
-                            <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm">
+                        <div class="flex flex-wrap gap-3 mb-8">
+                            <span class="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-1.5 rounded-full text-sm shadow-sm">
                                 <i class="fas fa-users mr-1"></i> All Hero Types
                             </span>
-                            <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm">
+                            <span class="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-1.5 rounded-full text-sm shadow-sm">
                                 <i class="fas fa-chart-line mr-1"></i> Beginner to Advanced
                             </span>
-                            <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm">
+                            <span class="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-1.5 rounded-full text-sm shadow-sm">
                                 <i class="fas fa-eye mr-1"></i> 45K views
                             </span>
                         </div>
                         
-                        <a href="whiteout-survival-heroes.html" class="bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition inline-block">
+                        <a href="whiteout-survival-heroes.html" class="bg-gradient-to-r from-primary to-secondary text-white px-8 py-3.5 rounded-xl font-semibold hover:opacity-90 transition inline-block shadow-md hover:shadow-lg">
                             <i class="fas fa-book-open mr-2"></i> Read Full Guide
                         </a>
                     </div>
@@ -131,29 +170,30 @@
     </section>
 
     <!-- Recent Guides -->
-    <section class="py-16 bg-gray-100 dark:bg-gray-900">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
+    <section class="py-20 bg-gray-100 dark:bg-gray-900 reveal">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Latest Whiteout Survival Guides</h2>
-                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                <p class="text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
                     Our most recently updated guides to help you master every aspect of Whiteout Survival.
                 </p>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-6 rounded-full"></div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-5xl mx-auto">
                 <!-- Guide 1 -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
-                    <div class="relative h-48">
-                        <img src="https://cdn.akamai.steamstatic.com/steam/apps/1840740/ss_2a45ca9cd78ec8d24cab652f0a6e9821e7821b72.1920x1080.jpg" 
+                <div class="guide-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden">
+                    <div class="relative h-56">
+                        <img src="../assets/Images/hero-best.webp" 
                              alt="Building Optimization Guide" 
                              class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                         <div class="absolute bottom-4 left-4">
-                            <span class="bg-green-600 text-white text-xs font-semibold px-2 py-1 rounded">Buildings</span>
+                            <span class="bg-gradient-to-r from-green-600 to-green-700 text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-sm card-tag">Buildings</span>
                         </div>
                     </div>
                     <div class="p-6">
-                        <div class="flex justify-between items-center mb-2">
+                        <div class="flex justify-between items-center mb-3">
                             <span class="text-gray-500 text-sm">
                                 <i class="far fa-calendar-alt mr-1"></i> Updated 1 week ago
                             </span>
@@ -165,34 +205,34 @@
                                 <i class="fas fa-star"></i>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Building Placement & Upgrade Priority</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Building Placement & Upgrade Priority</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 line-clamp-3">
                             Learn the optimal placement strategy for all buildings and which ones to prioritize for upgrades at each stage of the game.
                         </p>
                         <div class="flex justify-between items-center">
                             <div class="flex items-center">
                                 <span class="text-gray-700 dark:text-gray-300 text-sm">By Molly</span>
                             </div>
-                            <button class="text-primary dark:text-purple-400 hover:text-secondary dark:hover:text-purple-300 text-sm font-semibold transition">
-                                Read Guide <i class="fas fa-arrow-right ml-1"></i>
+                            <button class="text-primary dark:text-purple-400 hover:text-secondary dark:hover:text-purple-300 text-sm font-semibold transition flex items-center">
+                                Read Guide <i class="fas fa-arrow-right ml-2"></i>
                             </button>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Bear Trap Guide -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
-                    <div class="relative h-48">
-                        <img src="https://cdn.akamai.steamstatic.com/steam/apps/1840740/ss_e83f6b746ba70fe99cdb9d91ba0b6f57eee5a122.1920x1080.jpg" 
+                <div class="guide-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden">
+                    <div class="relative h-56">
+                        <img src="../assets/Images/bear-trap.webp" 
                              alt="Bear Trap Guide" 
                              class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                         <div class="absolute bottom-4 left-4">
-                            <span class="bg-orange-600 text-white text-xs font-semibold px-2 py-1 rounded">Alliance Events</span>
+                            <span class="bg-gradient-to-r from-orange-500 to-orange-600 text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-sm card-tag">Alliance Events</span>
                         </div>
                     </div>
                     <div class="p-6">
-                        <div class="flex justify-between items-center mb-2">
+                        <div class="flex justify-between items-center mb-3">
                             <span class="text-gray-500 text-sm">
                                 <i class="far fa-calendar-alt mr-1"></i> Updated 3 days ago
                             </span>
@@ -204,36 +244,40 @@
                                 <i class="fas fa-star-half-alt"></i>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">🐻 Bear Trap Guide & Strategy</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">🐻 Bear Trap Guide & Strategy</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 line-clamp-3">
                             Master the Bear Trap alliance event with optimal hero formations, rally strategies, and tips to maximize your rewards.
                         </p>
                         <div class="flex justify-between items-center">
                             <div class="flex items-center">
                                 <span class="text-gray-700 dark:text-gray-300 text-sm">By Alliance PRO</span>
                             </div>
-                            <a href="whiteout-survival-bear-trap.html" class="text-primary dark:text-purple-400 hover:text-secondary dark:hover:text-purple-300 text-sm font-semibold transition">
-                                Read Guide <i class="fas fa-arrow-right ml-1"></i>
+                            <a href="whiteout-survival-bear-trap.html" class="text-primary dark:text-purple-400 hover:text-secondary dark:hover:text-purple-300 text-sm font-semibold transition flex items-center">
+                                Read Guide <i class="fas fa-arrow-right ml-2"></i>
                             </a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Guide 2 -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
-                    <div class="relative h-48">
-                        <img src="https://cdn.akamai.steamstatic.com/steam/apps/1840740/ss_156dfb14c4c461d143ce913c408dc686d76fb573.1920x1080.jpg" 
-                             alt="Research Guide" 
+                
+                
+                
+
+                <!-- Base Defense Guide -->
+                <div class="guide-card bg-white dark:bg-gray-800 rounded-2xl overflow-hidden">
+                    <div class="relative h-56">
+                        <img src="https://cdn.akamai.steamstatic.com/steam/apps/1840740/ss_8830aa93a246f57fb14b9b315a00557f372ca156.1920x1080.jpg" 
+                             alt="Base Defense Guide" 
                              class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                         <div class="absolute bottom-4 left-4">
-                            <span class="bg-purple-600 text-white text-xs font-semibold px-2 py-1 rounded">Research</span>
+                            <span class="bg-gradient-to-r from-cyan-600 to-cyan-700 text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-sm card-tag">Defense</span>
                         </div>
                     </div>
                     <div class="p-6">
-                        <div class="flex justify-between items-center mb-2">
+                        <div class="flex justify-between items-center mb-3">
                             <span class="text-gray-500 text-sm">
-                                <i class="far fa-calendar-alt mr-1"></i> Updated 2 weeks ago
+                                <i class="far fa-calendar-alt mr-1"></i> Updated 5 days ago
                             </span>
                             <div class="flex text-yellow-400 text-sm">
                                 <i class="fas fa-star"></i>
@@ -243,63 +287,24 @@
                                 <i class="fas fa-star-half-alt"></i>
                             </div>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Research Path Guide: Economy vs Combat</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
-                            Detailed research paths for balancing economic growth and combat effectiveness, with recommendations for different player styles.
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Base Defense & Troop Formations</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 line-clamp-3">
+                            Master the art of base defense with optimal troop compositions, garrison heroes, and defensive building placements.
                         </p>
                         <div class="flex justify-between items-center">
                             <div class="flex items-center">
-                                <span class="text-gray-700 dark:text-gray-300 text-sm">By Classified</span>
+                                <span class="text-gray-700 dark:text-gray-300 text-sm">By ShieldMaster</span>
                             </div>
-                            <button class="text-primary dark:text-purple-400 hover:text-secondary dark:hover:text-purple-300 text-sm font-semibold transition">
-                                Read Guide <i class="fas fa-arrow-right ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Guide 3 -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
-                    <div class="relative h-48">
-                        <img src="https://cdn.akamai.steamstatic.com/steam/apps/1840740/ss_dfbd0d9fa4b8a7a1a09b07c806c15f0d90e2d538.1920x1080.jpg" 
-                             alt="Territory Control Guide" 
-                             class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4">
-                            <span class="bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded">Territory</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-gray-500 text-sm">
-                                <i class="far fa-calendar-alt mr-1"></i> Updated 3 weeks ago
-                            </span>
-                            <div class="flex text-yellow-400 text-sm">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Territory Expansion & Defense Strategy</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
-                            Learn how to effectively expand your territory, defend key resources, and coordinate with alliance members for maximum control.
-                        </p>
-                        <div class="flex justify-between items-center">
-                            <div class="flex items-center">
-                                <span class="text-gray-700 dark:text-gray-300 text-sm">By 571</span>
-                            </div>
-                            <button class="text-primary dark:text-purple-400 hover:text-secondary dark:hover:text-purple-300 text-sm font-semibold transition">
-                                Read Guide <i class="fas fa-arrow-right ml-1"></i>
+                            <button class="text-primary dark:text-purple-400 hover:text-secondary dark:hover:text-purple-300 text-sm font-semibold transition flex items-center">
+                                Read Guide <i class="fas fa-arrow-right ml-2"></i>
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center mt-10">
-                <button class="bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-full font-semibold hover:opacity-90 transition">
+            <div class="text-center mt-14">
+                <button class="bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition shadow-md hover:shadow-lg">
                     <i class="fas fa-book mr-2"></i> Load More Guides
                 </button>
             </div>
@@ -460,6 +465,24 @@
                 .then(data => {
                     document.getElementById('footer-container').innerHTML = data;
                 });
+                
+            // Reveal animations on scroll
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            function revealOnScroll() {
+                for (let i = 0; i < revealElements.length; i++) {
+                    let windowHeight = window.innerHeight;
+                    let elementTop = revealElements[i].getBoundingClientRect().top;
+                    let elementVisible = 150;
+                    
+                    if (elementTop < windowHeight - elementVisible) {
+                        revealElements[i].classList.add("active");
+                    }
+                }
+            }
+            
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Initial check on page load
         });
     </script>
 </body>
