@@ -3,7 +3,7 @@
         <div class="flex justify-between items-center">
             <div class="flex items-center space-x-2">
                 <i class="fas fa-chess-rook text-primary text-2xl"></i>
-                <a href="/" class="text-2xl font-bold text-gray-900 dark:text-white header-logo">
+                <a href="#" id="home-link" class="text-2xl font-bold text-gray-900 dark:text-white header-logo">
                     <span class="text-primary">Win</span><span class="text-secondary">craft</span>
                     <span class="text-xs font-semibold align-text-top bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">GAMING HUB</span>
                 </a>
@@ -11,12 +11,12 @@
             
             <div class="hidden md:flex items-center space-x-4 nav-container">
                 <nav class="flex space-x-6">
-                    <a href="/" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Home</a>
-                    <a href="/categories" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Games</a>
-                    <a href="/guide" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Guides</a>
-                    <a href="/tips" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Quick Tips</a>
-                    <a href="/about" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">About</a>
-                    <a href="/contact" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Contact</a>
+                    <a href="./" id="nav-home" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Home</a>
+                    <a href="../pages/categories.html" id="nav-categories" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Games</a>
+                    <a href="../pages/guide.html" id="nav-guide" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Guides</a>
+                    <a href="../pages/tips.html" id="nav-tips" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Quick Tips</a>
+                    <a href="../pages/about.html" id="nav-about" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">About</a>
+                    <a href="../pages/contact.html" id="nav-contact" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Contact</a>
                 </nav>
                 
                 <!-- Google Translate Widget -->
@@ -69,18 +69,95 @@
         
         <div id="mobile-menu" class="mobile-menu md:hidden bg-gray-100 dark:bg-gray-900 mt-2 rounded-lg">
             <div class="px-4 py-3 flex flex-col space-y-3">
-                <a href="/" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Home</a>
-                <a href="/categories" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Games</a>
-                <a href="/guide" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Guides</a>
-                <a href="/tips" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Quick Tips</a>
-                <a href="/about" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">About</a>
-                <a href="/contact" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Contact</a>
+                <a href="#" id="mobile-nav-home" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Home</a>
+                <a href="#" id="mobile-nav-categories" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Games</a>
+                <a href="#" id="mobile-nav-guide" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Guides</a>
+                <a href="#" id="mobile-nav-tips" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Quick Tips</a>
+                <a href="#" id="mobile-nav-about" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">About</a>
+                <a href="#" id="mobile-nav-contact" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-purple-400 transition">Contact</a>
                 <button class="bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-full hover:opacity-90 transition w-full">
                     <i class="fas fa-user mr-2"></i>Sign In
                 </button>
             </div>
         </div>
     </div>
+    
+    <!-- Path Resolution Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Detect if we're in the root directory, pages directory, or guides directory
+            const path = window.location.pathname;
+            const isRootPage = !path.includes('/src/');
+            const isGuidesPage = path.includes('/guides/');
+            
+            // Set up the correct paths based on current location
+            const homePath = isRootPage ? './' : '../../';
+            const pagesPath = isRootPage ? './src/pages/' : '../pages/';
+            const guidesPath = isRootPage ? './src/guides/' : (isGuidesPage ? './' : '../guides/');
+            
+            // Update main navigation links
+            document.getElementById('home-link').href = homePath;
+            document.getElementById('nav-home').href = homePath;
+            document.getElementById('nav-categories').href = pagesPath + 'categories.html';
+            document.getElementById('nav-guide').href = pagesPath + 'guide.html';
+            document.getElementById('nav-tips').href = pagesPath + 'tips.html';
+            document.getElementById('nav-about').href = pagesPath + 'about.html';
+            document.getElementById('nav-contact').href = pagesPath + 'contact.html';
+            
+            // Update mobile navigation links
+            document.getElementById('mobile-nav-home').href = homePath;
+            document.getElementById('mobile-nav-categories').href = pagesPath + 'categories.html';
+            document.getElementById('mobile-nav-guide').href = pagesPath + 'guide.html';
+            document.getElementById('mobile-nav-tips').href = pagesPath + 'tips.html';
+            document.getElementById('mobile-nav-about').href = pagesPath + 'about.html';
+            document.getElementById('mobile-nav-contact').href = pagesPath + 'contact.html';
+            
+            // Set active state for navigation items based on current page
+            const currentPage = path.toLowerCase();
+            
+            // Remove any existing active classes
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active-nav-link');
+            });
+            
+            // Set active class based on current page
+            if (isRootPage || currentPage.includes('index.html')) {
+                document.getElementById('nav-home').classList.add('active-nav-link');
+                document.getElementById('mobile-nav-home').classList.add('active-nav-link');
+            } else if (currentPage.includes('categories.html')) {
+                document.getElementById('nav-categories').classList.add('active-nav-link');
+                document.getElementById('mobile-nav-categories').classList.add('active-nav-link');
+            } else if (currentPage.includes('guide.html')) {
+                document.getElementById('nav-guide').classList.add('active-nav-link');
+                document.getElementById('mobile-nav-guide').classList.add('active-nav-link');
+            } else if (currentPage.includes('tips.html')) {
+                document.getElementById('nav-tips').classList.add('active-nav-link');
+                document.getElementById('mobile-nav-tips').classList.add('active-nav-link');
+            } else if (currentPage.includes('about.html')) {
+                document.getElementById('nav-about').classList.add('active-nav-link');
+                document.getElementById('mobile-nav-about').classList.add('active-nav-link');
+            } else if (currentPage.includes('contact.html')) {
+                document.getElementById('nav-contact').classList.add('active-nav-link');
+                document.getElementById('mobile-nav-contact').classList.add('active-nav-link');
+            } else if (isGuidesPage) {
+                document.getElementById('nav-guide').classList.add('active-nav-link');
+                document.getElementById('mobile-nav-guide').classList.add('active-nav-link');
+            }
+            
+            console.log('Navigation paths updated. isRootPage:', isRootPage, 'isGuidesPage:', isGuidesPage);
+            
+            // Fix mobile menu toggle functionality
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('flex');
+                });
+            }
+        });
+    </script>
     
     <!-- Theme debug helper -->
     <script>

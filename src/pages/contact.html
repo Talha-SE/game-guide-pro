@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -32,10 +33,10 @@
     <!-- Google AdSense (replace with your actual ID) -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 </head>
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col theme-transition">
     <!-- Header/Navigation -->
     <div id="header-container"></div>
-
+    
     <!-- Page Header -->
     <section class="hero-gradient py-16">
         <div class="container mx-auto px-4">
@@ -47,198 +48,12 @@
             </div>
         </div>
     </section>
-
-    <!-- Contact Section -->
-    <section class="py-16 bg-gray-100 dark:bg-gray-900">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-xl overflow-hidden">
-                <div class="md:flex">
-                    <div class="md:w-1/2 bg-gradient-to-br from-primary to-secondary p-10 text-white">
-                        <h2 class="text-3xl font-bold mb-6">Get In Touch</h2>
-                        <p class="mb-8">
-                            Have questions, suggestions, or partnership inquiries? We'd love to hear from you!
-                        </p>
-                        <div class="space-y-4">
-                            <div class="flex items-center">
-                                <i class="fas fa-envelope text-xl mr-4"></i>
-                                <span>contact@gameguidepro.com</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-phone-alt text-xl mr-4"></i>
-                                <span>+1 (555) 123-4567</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-map-marker-alt text-xl mr-4"></i>
-                                <span>123 Gaming Street, Virtual City</span>
-                            </div>
-                        </div>
-                        <div class="mt-8">
-                            <h3 class="font-bold mb-4">Follow Us</h3>
-                            <div class="flex space-x-4">
-                                <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition">
-                                    <i class="fab fa-discord"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="md:w-1/2 p-10">
-                        <form>
-                            <div class="mb-4">
-                                <label for="name" class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">Your Name</label>
-                                <input type="text" id="name" 
-                                       class="w-full bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg px-4 py-3 text-gray-900 dark:text-white focus:outline-none focus:border-primary transition">
-                            </div>
-                            <div class="mb-4">
-                                <label for="email" class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">Email Address</label>
-                                <input type="email" id="email" 
-                                       class="w-full bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg px-4 py-3 text-gray-900 dark:text-white focus:outline-none focus:border-primary transition">
-                            </div>
-                            <div class="mb-4">
-                                <label for="subject" class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">Subject</label>
-                                <select id="subject" 
-                                        class="w-full bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg px-4 py-3 text-gray-900 dark:text-white focus:outline-none focus:border-primary transition">
-                                    <option value="">Select a topic</option>
-                                    <option value="guide-request">Guide Request</option>
-                                    <option value="partnership">Partnership</option>
-                                    <option value="feedback">Feedback</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            <div class="mb-6">
-                                <label for="message" class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">Message</label>
-                                <textarea id="message" rows="4" 
-                                          class="w-full bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg px-4 py-3 text-gray-900 dark:text-white focus:outline-none focus:border-primary transition"></textarea>
-                            </div>
-                            <button type="submit" 
-                                    class="w-full bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 rounded-lg hover:opacity-90 transition">
-                                Send Message
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Map Section -->
-    <section class="py-8 bg-white dark:bg-gray-800">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <div class="bg-gray-200 dark:bg-gray-700 rounded-xl h-64 md:h-96 overflow-hidden">
-                    <!-- Here you would typically add a Google Map embed. For placeholder: -->
-                    <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-300 to-gray-400 dark:from-gray-600 dark:to-gray-800">
-                        <div class="text-center">
-                            <i class="fas fa-map-marked-alt text-primary text-5xl mb-4"></i>
-                            <p class="text-gray-700 dark:text-gray-300 font-semibold">
-                                Google Maps Embed Would Be Here
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="py-16 bg-gray-100 dark:bg-gray-900">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Frequently Asked Questions</h2>
-                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                    Find answers to common questions about our guides, contributing, and more.
-                </p>
-            </div>
-            
-            <div class="max-w-3xl mx-auto space-y-6">
-                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
-                    <button class="flex justify-between items-center w-full focus:outline-none">
-                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white text-left">How can I contribute to GameGuide Pro?</h3>
-                        <i class="fas fa-chevron-down text-primary"></i>
-                    </button>
-                    <div class="mt-4">
-                        <p class="text-gray-600 dark:text-gray-400">
-                            We welcome contributions from passionate gamers! You can submit your own guides, tips, or corrections through our contact form. Our editorial team will review your submission and may publish it with proper attribution.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
-                    <button class="flex justify-between items-center w-full focus:outline-none">
-                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white text-left">Are you looking for writers?</h3>
-                        <i class="fas fa-chevron-down text-primary"></i>
-                    </button>
-                    <div class="mt-4">
-                        <p class="text-gray-600 dark:text-gray-400">
-                            Yes, we're always on the lookout for talented writers who are passionate about gaming. If you're interested, please submit your portfolio and sample write-ups through our contact form.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
-                    <button class="flex justify-between items-center w-full focus:outline-none">
-                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white text-left">How often are guides updated?</h3>
-                        <i class="fas fa-chevron-down text-primary"></i>
-                    </button>
-                    <div class="mt-4">
-                        <p class="text-gray-600 dark:text-gray-400">
-                            We strive to keep our guides up-to-date with the latest game patches and meta changes. Popular games receive updates within 48-72 hours after major patches. Each guide displays its last update date.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
-                    <button class="flex justify-between items-center w-full focus:outline-none">
-                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white text-left">Do you offer coaching services?</h3>
-                        <i class="fas fa-chevron-down text-primary"></i>
-                    </button>
-                    <div class="mt-4">
-                        <p class="text-gray-600 dark:text-gray-400">
-                            Some of our expert contributors offer one-on-one coaching services. Check individual author profiles for availability and rates, or contact us for more information.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="py-16 bg-gradient-to-r from-primary to-gray-900">
-        <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto text-center">
-                <h2 class="text-3xl font-bold text-white mb-4">Stay Updated</h2>
-                <p class="text-gray-300 mb-8">
-                    Subscribe to our newsletter to receive the latest game guides, tips, and exclusive content directly to your inbox.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
-                    <input type="email" 
-                           placeholder="Your email address" 
-                           class="flex-grow bg-white/10 border border-white/20 text-white px-5 py-3 rounded-lg focus:outline-none focus:border-primary transition placeholder-gray-400">
-                    <button class="bg-gradient-to-r from-primary to-secondary text-white font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition whitespace-nowrap">
-                        Subscribe Now
-                    </button>
-                </div>
-                <p class="text-gray-400 text-xs mt-3">
-                    We respect your privacy. Unsubscribe at any time.
-                </p>
-            </div>
-        </div>
-    </section>
-
+    
+    <!-- Contact form section would go here -->
+    
     <!-- Footer -->
     <div id="footer-container"></div>
-
+    
     <script src="../assets/js/scripts.js"></script>
     <script>
         // Load components
@@ -254,18 +69,6 @@
                 .then(data => {
                     document.getElementById('footer-container').innerHTML = data;
                 });
-                
-            // Simple accordion functionality for FAQs
-            document.querySelectorAll('.bg-white.dark\\:bg-gray-800 button').forEach(button => {
-                button.addEventListener('click', () => {
-                    const content = button.nextElementSibling;
-                    const icon = button.querySelector('i');
-                    
-                    content.classList.toggle('hidden');
-                    icon.classList.toggle('fa-chevron-down');
-                    icon.classList.toggle('fa-chevron-up');
-                });
-            });
         });
     </script>
 </body>

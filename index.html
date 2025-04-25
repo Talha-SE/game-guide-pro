@@ -298,10 +298,23 @@
     <script>
         // Load components
         document.addEventListener('DOMContentLoaded', function() {
+            // Adjust paths based on where the index.html is located
             fetch('src/components/header.html')
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('header-container').innerHTML = data;
+                    
+                    // Fix navigation links path for the main index.html file
+                    document.querySelectorAll('#header-container a[href^="../pages/"]').forEach(link => {
+                        const href = link.getAttribute('href');
+                        // If link is to index.html, point to current directory
+                        if (href === '../pages/index.html') {
+                            link.setAttribute('href', './');
+                        } else {
+                            // For all other links, adjust the path
+                            link.setAttribute('href', href.replace('../pages/', 'src/pages/'));
+                        }
+                    });
                 });
                 
             fetch('src/components/search.html')
@@ -314,9 +327,20 @@
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('footer-container').innerHTML = data;
+                    
+                    // Also fix footer links if needed
+                    document.querySelectorAll('#footer-container a[href="/"]').forEach(link => {
+                        link.setAttribute('href', './');
+                    });
+                    
+                    document.querySelectorAll('#footer-container a[href^="/"]').forEach(link => {
+                        const href = link.getAttribute('href');
+                        if (href !== '/') {
+                            link.setAttribute('href', 'src/pages' + href + '.html');
+                        }
+                    });
                 });
         });
     </script>
 </body>
 </html>
-``` 

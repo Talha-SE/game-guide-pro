@@ -262,6 +262,9 @@ body.translated-ltr {
         gap: 1rem;
     }
     
+    /* Remove conflicting theme toggle styles */
+    /* These styles were causing the inconsistent appearance */
+    /*
     .theme-toggle {
         width: 40px;
         height: 22px;
@@ -283,4 +286,5 @@ body.translated-ltr {
     .theme-toggle i.fa-moon {
         right: 5px;
     }
+    */
 }
