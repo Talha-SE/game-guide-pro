@@ -258,33 +258,10 @@ crossorigin="anonymous"></script>
                     <!-- Related Guides -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 mb-6">
                         <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Related Guides</h3>
-                        <ul class="space-y-4">
-                            <li>
-                                <a href="#" class="flex items-start hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded-lg transition">
-                                    <img src="https://cdn.akamai.steamstatic.com/steam/apps/1840740/header.jpg" alt="Hero Guide" class="w-16 h-12 object-cover rounded mr-3">
-                                    <div>
-                                        <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Whiteout Survival Hero Tier List</h4>
-                                        <p class="text-xs text-gray-500 dark:text-gray-400">Best heroes for every situation</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="flex items-start hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded-lg transition">
-                                    <img src="https://cdn.akamai.steamstatic.com/steam/apps/1840740/header.jpg" alt="Building Guide" class="w-16 h-12 object-cover rounded mr-3">
-                                    <div>
-                                        <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Base Building Strategy Guide</h4>
-                                        <p class="text-xs text-gray-500 dark:text-gray-400">Optimize your base layout</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="flex items-start hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded-lg transition">
-                                    <img src="https://cdn.akamai.steamstatic.com/steam/apps/1840740/header.jpg" alt="Research Guide" class="w-16 h-12 object-cover rounded mr-3">
-                                    <div>
-                                        <h4 class="text-sm font-semibold text-gray-900 dark:text-white">Research Priority Guide</h4>
-                                        <p class="text-xs text-gray-500 dark:text-gray-400">What to research first</p>
-                                    </div>
-                                </a>
+                        <ul id="related-guides-list" class="space-y-4">
+                            <li class="text-center py-4">
+                                <div class="animate-spin rounded-full h-6 w-6 border-t-2 border-b-2 border-primary mx-auto"></div>
+                                <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Loading related guides...</p>
                             </li>
                         </ul>
                         <div class="mt-4 text-center">
@@ -308,17 +285,7 @@ crossorigin="anonymous"></script>
                         </div>
                     </div>
                     
-                    <!-- Newsletter Signup -->
-                    <div class="bg-gradient-to-r from-primary to-gray-900 rounded-xl shadow-md p-6">
-                        <h3 class="text-lg font-bold text-white mb-3">Get More Gaming Tips</h3>
-                        <p class="text-gray-300 text-sm mb-4">Subscribe to our newsletter for the latest game guides and tips.</p>
-                        <form>
-                            <input type="email" placeholder="Your email address" class="w-full bg-white/10 border border-white/20 text-white px-4 py-2 rounded-lg mb-3 focus:outline-none focus:border-primary transition placeholder-gray-400">
-                            <button type="submit" class="w-full bg-white text-primary font-semibold px-4 py-2 rounded-lg hover:bg-gray-100 transition">
-                                Subscribe
-                            </button>
-                        </form>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -342,7 +309,74 @@ crossorigin="anonymous"></script>
                 .then(data => {
                     document.getElementById('footer-container').innerHTML = data;
                 });
+                
+            // Load related guides
+            loadRelatedGuides();
         });
+        
+        // Function to load related guides
+        function loadRelatedGuides() {
+            const currentPath = window.location.pathname;
+            const currentGuideFile = currentPath.split('/').pop();
+            
+            // List of available guides - in a real application, this would be generated dynamically
+            // from your file system during build or fetched from an API
+            const guideData = [
+                {
+                    url: 'whiteout-survival-heroes.html',
+                    title: 'Ultimate Hero Tier List & Guide',
+                    description: 'Best heroes for each role and optimal strategies',
+                    image: '../assets/Images/hero-best.webp'
+                },
+                {
+                    url: 'whiteout-survival-bear-trap.html',
+                    title: '🐻 Bear Trap Guide & Strategy',
+                    description: 'Master the Bear Trap alliance event',
+                    image: '../assets/Images/bear-trap.webp'
+                },
+                {
+                    url: 'whiteout-survival.html',
+                    title: 'Whiteout Survival Guides Hub',
+                    description: 'Complete collection of game guides',
+                    image: '../assets/images/whiteout-survival-heroes.jpg'
+                }
+                // Additional guides would be added here as they're created
+            ];
+            
+            // Filter out the current guide
+            const relatedGuides = guideData.filter(guide => guide.url !== currentGuideFile);
+            
+            // Get the list element
+            const guidesList = document.getElementById('related-guides-list');
+            
+            // Clear loading indicator
+            guidesList.innerHTML = '';
+            
+            // If no related guides found
+            if (relatedGuides.length === 0) {
+                guidesList.innerHTML = `
+                    <li class="text-center py-4">
+                        <p class="text-sm text-gray-500 dark:text-gray-400">No related guides found.</p>
+                    </li>
+                `;
+                return;
+            }
+            
+            // Add each guide to the list (limit to 3 guides)
+            relatedGuides.slice(0, 3).forEach(guide => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <a href="${guide.url}" class="flex items-start hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded-lg transition">
+                        <img src="${guide.image}" alt="${guide.title}" class="w-16 h-12 object-cover rounded mr-3">
+                        <div>
+                            <h4 class="text-sm font-semibold text-gray-900 dark:text-white">${guide.title}</h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">${guide.description}</p>
+                        </div>
+                    </a>
+                `;
+                guidesList.appendChild(listItem);
+            });
+        }
     </script>
 </body>
 </html>
