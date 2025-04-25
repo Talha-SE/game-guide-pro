@@ -49,10 +49,10 @@
                         Discover the best strategies, tips and tricks for your favorite games. From beginners to pros, we've got you covered!
                     </p>
                     <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-                        <a href="/guide" class="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition pulse-animation inline-block text-center">
+                        <a href="./src/guides/whiteout-survival.html" class="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition pulse-animation inline-block text-center">
                             <i class="fas fa-play mr-2"></i>Explore Guides
                         </a>
-                        <a href="/about" class="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-primary transition inline-block text-center">
+                        <a href="./src/pages/about.html" class="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-primary transition inline-block text-center">
                             <i class="fas fa-book mr-2"></i>Learn More
                         </a>
                     </div>
@@ -268,28 +268,7 @@
         </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section class="py-16 bg-gradient-to-r from-primary to-gray-900">
-        <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto text-center">
-                <h2 class="text-3xl font-bold text-white mb-4">Stay Updated</h2>
-                <p class="text-gray-300 mb-8">
-                    Subscribe to our newsletter to receive the latest game guides, tips, and exclusive content directly to your inbox.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
-                    <input type="email" 
-                           placeholder="Your email address" 
-                           class="flex-grow bg-white/10 border border-white/20 text-white px-5 py-3 rounded-lg focus:outline-none focus:border-primary transition placeholder-gray-400">
-                    <button class="bg-gradient-to-r from-primary to-secondary text-white font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition whitespace-nowrap">
-                        Subscribe Now
-                    </button>
-                </div>
-                <p class="text-gray-400 text-xs mt-3">
-                    We respect your privacy. Unsubscribe at any time.
-                </p>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- Footer -->
     <div id="footer-container"></div>
@@ -315,12 +294,12 @@
                             link.setAttribute('href', href.replace('../pages/', 'src/pages/'));
                         }
                     });
-                });
-                
-            fetch('src/components/search.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('search-container').innerHTML = data;
+                    
+                    // Also fix guide links if needed
+                    document.querySelectorAll('#header-container a[href^="../guides/"]').forEach(link => {
+                        const href = link.getAttribute('href');
+                        link.setAttribute('href', href.replace('../guides/', 'src/guides/'));
+                    });
                 });
                 
             fetch('src/components/footer.html')
@@ -328,16 +307,10 @@
                 .then(data => {
                     document.getElementById('footer-container').innerHTML = data;
                     
-                    // Also fix footer links if needed
-                    document.querySelectorAll('#footer-container a[href="/"]').forEach(link => {
-                        link.setAttribute('href', './');
-                    });
-                    
-                    document.querySelectorAll('#footer-container a[href^="/"]').forEach(link => {
+                    // Fix footer links
+                    document.querySelectorAll('#footer-container a[href^="../"]').forEach(link => {
                         const href = link.getAttribute('href');
-                        if (href !== '/') {
-                            link.setAttribute('href', 'src/pages' + href + '.html');
-                        }
+                        link.setAttribute('href', href.replace('../', 'src/'));
                     });
                 });
         });
