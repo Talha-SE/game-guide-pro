@@ -125,7 +125,7 @@
                         
                         <h3 class="text-2xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text relative">Send Us A Message</h3>
                         
-                        <form id="contact-form" class="space-y-6 relative">
+                        <form id="contact-form" action="https://formspree.io/f/mwpoplle" method="POST" class="space-y-6 relative">
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1" for="name">Your Name</label>
@@ -269,19 +269,14 @@
             
             if (form) {
                 form.addEventListener('submit', function(e) {
-                    e.preventDefault();
+                    // We no longer prevent default since we want the form to submit to Formspree
                     
-                    // You would typically send the form data to your server here
-                    // For now, we'll just show a success message
-                    
+                    // Log form submission to console (optional)
                     const formData = new FormData(form);
                     const formValues = Object.fromEntries(formData.entries());
+                    console.log('Form submitted to Formspree:', formValues);
                     
-                    console.log('Form submitted:', formValues);
-                    
-                    // Show success message (you could implement a more sophisticated notification)
-                    alert('Thanks for your message! We\'ll get back to you soon.');
-                    form.reset();
+                    // The form will now naturally submit to Formspree
                 });
             }
         });
@@ -309,3 +304,4 @@
     </script>
 </body>
 </html>
+``` 
