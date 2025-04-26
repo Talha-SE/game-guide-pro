@@ -11,19 +11,11 @@
     }
   ],
   "rewrites": [
-    { "source": "/", "destination": "/index.html" },
-    { "source": "/categories", "destination": "/src/pages/categories.html" },
-    { "source": "/guide", "destination": "/src/pages/guide.html" },
-    { "source": "/tips", "destination": "/src/pages/tips.html" },
-    { "source": "/about", "destination": "/src/pages/about.html" },
-    { "source": "/contact", "destination": "/src/pages/contact.html" },
-    
-    { "source": "/pages/:page", "destination": "/src/pages/:page.html" },
-    { "source": "/pages/:page.html", "destination": "/src/pages/:page.html" },
-    
-    { "source": "/guides/(.*)", "destination": "/src/guides/$1.html" },
-    { "source": "/assets/(.*)", "destination": "/src/assets/$1" },
-    { "source": "/components/(.*)", "destination": "/src/components/$1" }
+    { "source": "/", "destination": "/src/pages/index.html" },
+    { "source": "/guides/:path*", "destination": "/src/guides/:path*.html" },
+    { "source": "/pages/:path*", "destination": "/src/pages/:path*.html" },
+    { "source": "/assets/:path*", "destination": "/src/assets/:path*" },
+    { "source": "/components/:path*", "destination": "/src/components/:path*" }
   ],
   "cleanUrls": true
 }
